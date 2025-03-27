@@ -66,8 +66,8 @@ class CateringSubscriptionController extends Controller
         ->with([
             'cateringPackage',
              'cateringPackage.kitchen', 
+             //rorw
              'cateringPackage.category',
-             //fix disini
              'cateringPackage.city',
              'cateringTier',
         ])
