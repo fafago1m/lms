@@ -67,6 +67,7 @@ class CateringSubscriptionController extends Controller
             'cateringPackage',
              'cateringPackage.kitchen', 
              'cateringPackage.category',
+             //fix disini
              'cateringPackage.city',
              'cateringTier',
         ])
