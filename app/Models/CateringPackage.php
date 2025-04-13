@@ -20,12 +20,12 @@ class CateringPackage extends Model
         'slug',
         'thumbnail',
         'about',
-        'is_populer',
+        'is_popular',
         'category_id',
         'city_id',
-        'kitchen_id'
+        'kitchen_id',
     ];
-
+    
     public function setNameAttributes($value) {
         $this->attributes['name'] = $value;
         $this->attributes['slug'] = Str::slug($value);
@@ -60,9 +60,9 @@ public function kitchen(): BelongsTo
     }
 
     public function testimonials(): HasMany
-    {
-        return $this->hasMany(CateringBonus::class);
-    }
+{
+    return $this->hasMany(CateringTestimonial::class); 
+}
 
     public function tiers(): HasMany
     {

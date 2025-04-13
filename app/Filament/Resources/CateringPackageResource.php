@@ -75,7 +75,10 @@ class CateringPackageResource extends Resource
                         1 => 'Populer',
                         0 => 'Not Populer'
                     ])
-                    ->required(),
+                    ->default(0)
+                    ->required()
+                    ->live(),
+                
 
                     Select::make('city_id')
                     ->relationship('city', 'name')
