@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Mar 27, 2025 at 03:07 AM
+-- Generation Time: Apr 13, 2025 at 06:21 PM
 -- Server version: 10.4.32-MariaDB
 -- PHP Version: 8.2.12
 
@@ -18,7 +18,7 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Database: `laravel_lms`
+-- Database: `laravel_lms_fafa`
 --
 
 -- --------------------------------------------------------
@@ -40,8 +40,10 @@ CREATE TABLE `cache` (
 INSERT INTO `cache` (`key`, `value`, `expiration`) VALUES
 ('laravel_cache_356a192b7913b04c54574d18c28d46e6395428ab', 'i:1;', 1743035211),
 ('laravel_cache_356a192b7913b04c54574d18c28d46e6395428ab:timer', 'i:1743035211;', 1743035211),
-('laravel_cache_livewire-rate-limiter:a17961fa74e9275d529f489537f179c05d50c2f3', 'i:2;', 1742969549),
-('laravel_cache_livewire-rate-limiter:a17961fa74e9275d529f489537f179c05d50c2f3:timer', 'i:1742969549;', 1742969549);
+('laravel_cache_da4b9237bacccdf19c0760cab7aec4a8359010b0', 'i:2;', 1744556814),
+('laravel_cache_da4b9237bacccdf19c0760cab7aec4a8359010b0:timer', 'i:1744556814;', 1744556814),
+('laravel_cache_livewire-rate-limiter:a17961fa74e9275d529f489537f179c05d50c2f3', 'i:1;', 1744556366),
+('laravel_cache_livewire-rate-limiter:a17961fa74e9275d529f489537f179c05d50c2f3:timer', 'i:1744556366;', 1744556366);
 
 -- --------------------------------------------------------
 
@@ -76,7 +78,10 @@ CREATE TABLE `categories` (
 --
 
 INSERT INTO `categories` (`id`, `name`, `slug`, `photo`, `deleted_at`, `created_at`, `updated_at`) VALUES
-(1, 'Makanan', 'makanan', 'gambar/01JQ8M2GNQJZE3YSDRPB799EAB.jpg', NULL, '2025-03-26 00:01:09', '2025-03-26 00:01:09');
+(1, 'Halal', 'makanan', 'gambar/01JRQTKB1PRHRTW4VY2NT1WSGM.jpg', NULL, '2025-03-26 00:01:09', '2025-04-13 07:59:31'),
+(2, 'Bukbe', 'bukbe', 'gambar/01JRQTKY7XS6QKRNR6P1ZZXYAK.jpg', NULL, '2025-04-13 07:59:50', '2025-04-13 07:59:50'),
+(3, 'Prasmanan', 'prasmanan', 'gambar/01JRQTNGEP2WBB4HS7AAF35RVD.jpg', NULL, '2025-04-13 08:00:42', '2025-04-13 08:00:42'),
+(4, 'padang', 'padang', 'gambar/01JRQTQ0JFES9P21RZV97A0X6A.jpg', NULL, '2025-04-13 08:01:31', '2025-04-13 08:01:31');
 
 -- --------------------------------------------------------
 
@@ -128,8 +133,9 @@ CREATE TABLE `catering_packages` (
 --
 
 INSERT INTO `catering_packages` (`id`, `name`, `slug`, `thumbnail`, `about`, `is_popular`, `category_id`, `city_id`, `kitchen_id`, `deleted_at`, `created_at`, `updated_at`) VALUES
-(1, 'test', 'test', 'gambar/01JQ8RM8WHP6YQ1ANW4MG3C1BB.jpg', 'rfef', 1, 1, 1, 1, NULL, '2025-03-26 01:20:46', '2025-03-26 01:20:46'),
-(2, 'test', 'test', 'gambar/01JQ8RM8WHP6YQ1ANW4MG3C1BB.jpg', 'rfef', 0, 1, 1, 1, NULL, '2025-03-26 01:21:23', '2025-03-26 01:21:23');
+(1, 'Bukber', 'test', 'gambar/01JRQTSBV7J67NC89MD2CS4MT9.jpg', 'rfef', 1, 1, 1, 1, NULL, '2025-03-26 01:20:46', '2025-04-13 08:02:48'),
+(2, 'Freee', 'test', 'gambar/01JRQTZKVJWMF0XKJTYM3FH3CV.jpg', 'rfef', 1, 1, 1, 1, NULL, '2025-03-26 01:21:23', '2025-04-13 08:06:32'),
+(3, 'Makanan halal 100%', 'makanan-halal-100', 'gambar/01JRQTVD03Z71Q83KVJ4X90YR5.jpg', 'ijbkjbn', 1, 1, 1, 1, NULL, '2025-04-13 08:03:55', '2025-04-13 08:03:55');
 
 -- --------------------------------------------------------
 
@@ -151,7 +157,8 @@ CREATE TABLE `catering_photos` (
 --
 
 INSERT INTO `catering_photos` (`id`, `photo`, `catering_package_id`, `deleted_at`, `created_at`, `updated_at`) VALUES
-(1, 'gambar/01JQ8RNDQ2RJMH8NK23PQ2BZ3K.jpg', 2, NULL, '2025-03-26 01:21:23', '2025-03-26 01:21:23');
+(1, 'gambar/01JRQTZKW62C1QTYVRQ4R4FDTN.jpg', 2, NULL, '2025-03-26 01:21:23', '2025-04-13 08:06:13'),
+(2, 'gambar/01JRQTVD0SPZ3RJ0WGQBJH8BXC.jpg', 3, NULL, '2025-04-13 08:03:55', '2025-04-13 08:03:55');
 
 -- --------------------------------------------------------
 
@@ -425,8 +432,7 @@ CREATE TABLE `sessions` (
 --
 
 INSERT INTO `sessions` (`id`, `user_id`, `ip_address`, `user_agent`, `payload`, `last_activity`) VALUES
-('jrxSoEbwQnjuo6ZM7PdwDfvwGhPWbPkL9KwOCmKn', NULL, '127.0.0.1', 'PostmanRuntime/7.43.2', 'YTozOntzOjY6Il90b2tlbiI7czo0MDoiV1MyZ3VKMWQ3WTlzUmNJaVNkdmczZWZ0eGlNQlNhUjFUdlM2UDhURCI7czo5OiJfcHJldmlvdXMiO2E6MTp7czozOiJ1cmwiO3M6MjE6Imh0dHA6Ly8xMjcuMC4wLjE6ODAwMCI7fXM6NjoiX2ZsYXNoIjthOjI6e3M6Mzoib2xkIjthOjA6e31zOjM6Im5ldyI7YTowOnt9fX0=', 1743037275),
-('n8AjQSLqVLRdmrMC6yc5GU0hAaI26txYrmegd3YP', 1, '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/134.0.0.0 Safari/537.36', 'YTo2OntzOjY6Il90b2tlbiI7czo0MDoic1A1SnhRd1M2czc4b0JrSDRqVXRDbXF6YUNHaVFuN2hOV29mcFhYTCI7czo2OiJfZmxhc2giO2E6Mjp7czozOiJvbGQiO2E6MDp7fXM6MzoibmV3IjthOjA6e319czo1MDoibG9naW5fd2ViXzU5YmEzNmFkZGMyYjJmOTQwMTU4MGYwMTRjN2Y1OGVhNGUzMDk4OWQiO2k6MTtzOjE3OiJwYXNzd29yZF9oYXNoX3dlYiI7czo2MDoiJDJ5JDEyJDZEMFNaT2NaVFp4QWphazN1cEtyOXU0YjFBZ05RbHVYeGJUZUNVMUlXRmpvVUtEOWxkLzlDIjtzOjk6Il9wcmV2aW91cyI7YToxOntzOjM6InVybCI7czoyNzoiaHR0cDovLzEyNy4wLjAuMTo4MDAwL2FkbWluIjt9czo4OiJmaWxhbWVudCI7YTowOnt9fQ==', 1743039981);
+('U3BoIRCaZDz9hP1Qsbe0nQxingFCd3Y2OpCWX0nb', 2, '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36 Edg/135.0.0.0', 'YTo3OntzOjY6Il90b2tlbiI7czo0MDoidXFTQUZxMGZYRjVqaFdWdUJQdmxVWk1hOVJIM3VjU2REUzJpeVhlUiI7czo5OiJfcHJldmlvdXMiO2E6MTp7czozOiJ1cmwiO3M6NTI6Imh0dHA6Ly8xMjcuMC4wLjE6ODAwMC9hZG1pbi9jYXRlcmluZy1wYWNrYWdlcy8yL2VkaXQiO31zOjY6Il9mbGFzaCI7YToyOntzOjM6Im9sZCI7YTowOnt9czozOiJuZXciO2E6MDp7fX1zOjM6InVybCI7YTowOnt9czo1MDoibG9naW5fd2ViXzU5YmEzNmFkZGMyYjJmOTQwMTU4MGYwMTRjN2Y1OGVhNGUzMDk4OWQiO2k6MjtzOjE3OiJwYXNzd29yZF9oYXNoX3dlYiI7czo2MDoiJDJ5JDEyJHNUdHlYcUd2eUtGbVhveTZRTVRtMC51VDFoeS9mN254TFIySW85N3hGWEJUWUI0NThtd0ptIjtzOjg6ImZpbGFtZW50IjthOjA6e319', 1744556802);
 
 -- --------------------------------------------------------
 
@@ -473,7 +479,8 @@ CREATE TABLE `users` (
 --
 
 INSERT INTO `users` (`id`, `name`, `email`, `email_verified_at`, `password`, `remember_token`, `created_at`, `updated_at`) VALUES
-(1, 'fafa', 'admin@gmail.com', NULL, '$2y$12$6D0SZOcZTZxAjak3upKr9u4b1AgNQluXxbTeCU1IWFjoUKD9ld/9C', 'GArFYHFcQtgjObIt3uS22wkUyDj9245scV2nh0jWx47FMIadoHZsW2hWzm23', '2025-03-25 23:11:18', '2025-03-25 23:11:18');
+(1, 'fafa', 'admin@gmail.com', NULL, '$2y$12$6D0SZOcZTZxAjak3upKr9u4b1AgNQluXxbTeCU1IWFjoUKD9ld/9C', 'GArFYHFcQtgjObIt3uS22wkUyDj9245scV2nh0jWx47FMIadoHZsW2hWzm23', '2025-03-25 23:11:18', '2025-03-25 23:11:18'),
+(2, 'fafaa', 'fafa@gmail.com', NULL, '$2y$12$sTtyXqGvyKFmXoy6QMTm0.uT1hy/f7nxLR2Io97xFXBTYB458mwJm', 'w26zBkuInn8yzNnGdLFaXPWLyB5fTtKWDoJpIdoFplgdfp1XeQOMgKA9kafM', '2025-04-13 07:58:13', '2025-04-13 07:58:13');
 
 --
 -- Indexes for dumped tables
@@ -625,7 +632,7 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT for table `categories`
 --
 ALTER TABLE `categories`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT for table `catering_bonuses`
@@ -637,13 +644,13 @@ ALTER TABLE `catering_bonuses`
 -- AUTO_INCREMENT for table `catering_packages`
 --
 ALTER TABLE `catering_packages`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT for table `catering_photos`
 --
 ALTER TABLE `catering_photos`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT for table `catering_subscriptions`
@@ -709,7 +716,7 @@ ALTER TABLE `tier_benefits`
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- Constraints for dumped tables
